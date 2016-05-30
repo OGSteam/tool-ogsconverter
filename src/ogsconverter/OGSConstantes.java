@@ -2,7 +2,7 @@ package ogsconverter;
 
 public interface OGSConstantes {
 
-	// Couleur fond foncé
+	// Couleur fond foncÃ©
 	static String darkcolor[] = { "00CC00", "FF6666", "FF9900", "00FF00", "33FF99", "FF00FF",
 			"00FFFF", "FFCC00", "FFFF00", "0099FF", "EEC273", "FF0099", "00FF99", "00B0B0",
 			"B000B0", "FFFF90", "A0B0FF", "A0FF99", "FF99A0", "99FFA0", "99A0FF", "9900FF",
@@ -43,8 +43,8 @@ public interface OGSConstantes {
 	 */
 	static String msk_name_coord = "(.*?\\(\\[?[\\s\\S]*?\\]?\\)|\\s+\\d)";
 	static String msk_name_coord1 = msk_name_coord + ".*$"; /*
-															 * nom + coordonnées +
-															 * éventuelle ligne
+															 * nom + coordonnÃ©es +
+															 * Ã©ventuelle ligne
 															 * suivante (IE)
 															 */
 	static String msk_name_coord2 = "(.*?)(?:\\(\\[?(.*?)\\]?\\)|\\d(\\s*))$";
@@ -56,7 +56,7 @@ public interface OGSConstantes {
 			+ ")%\\D+(" + msk_nb_formated + ")%\\D*$";
 
 	/**
-	 * nombre de vaisseaux/défences
+	 * nombre de vaisseaux/dÃ©fences
 	 */
 	static String msk_nb_line = "^(?:\\D+\\s+)+((?:" + msk_nb_formated + "\\s*)+)$";
 
@@ -67,7 +67,7 @@ public interface OGSConstantes {
 			+ ")\\D+(" + msk_nb_formated + ")\\D*$";
 
 	/**
-	 * probabilité de création de lune
+	 * probabilitÃ© de crÃ©ation de lune
 	 */
 	static String msk_moon_prob = "^[^%]*?\\s(\\d+)\\s?%.*$";
 
@@ -88,7 +88,7 @@ public interface OGSConstantes {
 	 */
 
 	/**
-	 * Ligne avec le Nom de planet + coordonnées + date
+	 * Ligne avec le Nom de planet + coordonnÃ©es + date
 	 */
 	static String msk_name_coord_date = 	"(.*?)\\[(.*?)\\](.+)(\\d{2}\\-.*?:\\d{1,2})(\\D*?)$";
 
@@ -116,14 +116,14 @@ public interface OGSConstantes {
 	static String msk_legende = "(\\S+)\\s+(\\S+)\\s+(\\S+)\\s+(\\S+)\\s+(\\S+)\\s+(\\S+)\\s*.*";
 
 	/**
-	 * Données sur un membre
+	 * DonnÃ©es sur un membre
 	 */
 	static String msk_data_member = "^(\\d+)\\s+((?:\\s?\\S+)+)\\s\\s+((?:\\s?\\D+)+)\\s+("
 			+ msk_nb_formated
 			+ ")\\s+\\[(\\d{1,2}:\\d{1,3}:\\d{1,2})\\]\\s+(\\S+\\s\\S+)\\s?.*$";
 
 	/**
-	 * Données sur la date pour savoir s'il s'agit d'une copie Ogame
+	 * DonnÃ©es sur la date pour savoir s'il s'agit d'une copie Ogame
 	 */
 	static String mk_members_date = "\\d{4}-\\d{2}-\\d{2}\\s\\d{2}:\\d{2}:\\d{2}\\s+\\d";
 
@@ -135,12 +135,12 @@ public interface OGSConstantes {
 	 */
 
 	/**
-	 * Coordonnées
+	 * CoordonnÃ©es
 	 */
 	static String msk_emp_coord = "^\\S+\\s+(\\s*\\[\\d{1,2}:\\d{1,3}:\\d{1,2}\\])+";
 
 	/**
-	 * données avec constructions et constructions en attentes
+	 * donnÃ©es avec constructions et constructions en attentes
 	 */
 	static String msk_emp_data = "(" + msk_nb_formated + ")(?:\\s" + msk_nb_formated
 			+ "|\\s\\(" + msk_nb_formated + "\\))*";
@@ -165,19 +165,19 @@ public interface OGSConstantes {
 	 */
 
 	/**
-	 * Détection de la copy de la flotte. [fleet] est à replacer par le maske
+	 * DÃ©tection de la copy de la flotte. [fleet] est Ã  replacer par le maske
 	 * des noms complets des vaisseaux.
 	 */
 	static String msk_flotte_top = "(?m)(?u)(?i)^[^\\-]+?(?:\\s+\\-){2}\\s*^([fleet])\\s+"
 			+ msk_nb_formated + "\\s+[\\S\\s]+?^";
 
 	/**
-	 * Détection de la ligne précédent une liste de vaisseaux
+	 * DÃ©tection de la ligne prÃ©cÃ©dent une liste de vaisseaux
 	 */
 	static String msk_flotte_start = "(?u)^[^\\-]+?(?:\\s+\\-){2}\\s*$";
 
 	/**
-	 * Récupération des nombres de vaiseaux.
+	 * RÃ©cupÃ©ration des nombres de vaiseaux.
 	 */
 	static String msk_flotte_data = "(?i)(?u)^([\\S\\s]+?)\\s+(" + msk_nb_formated
 			+ ")\\s+[\\S\\s]+?$";

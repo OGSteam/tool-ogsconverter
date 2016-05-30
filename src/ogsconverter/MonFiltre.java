@@ -15,7 +15,7 @@ import javax.swing.filechooser.FileFilter;
 
 /**
  *
- * @author MOREAU Benoît
+ * @author MOREAU BenoÃ®t
  */
 public class MonFiltre extends FileFilter {
     

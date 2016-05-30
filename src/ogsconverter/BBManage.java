@@ -35,7 +35,7 @@ import ogsconverter.widgets.JLimiterTextField;
 
 /**
  * 
- * @author MOREAU Benoît
+ * @author MOREAU BenoÃ®t
  */
 public class BBManage extends JFrame implements ActionListener {
 

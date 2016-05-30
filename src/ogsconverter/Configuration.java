@@ -12,7 +12,7 @@ package ogsconverter;
 
 /**
  * 
- * @author MOREAU Benoît
+ * @author MOREAU BenoÃ®t
  */
 // Les import
 import java.io.File;
@@ -27,14 +27,14 @@ public class Configuration {
 	/**
 	 * Methode : getConfig
 	 * 
-	 * Description : La méthode getConfig va retourner l'information de configuration désirée à
+	 * Description : La mÃ©thode getConfig va retourner l'information de configuration dÃ©sirÃ©e Ã 
 	 * partir d'un fichier de configuration
 	 * 
 	 * date : 8/05/2004
 	 * 
 	 * @param fichier
 	 * @param key
-	 * @return : String représentant la valeur de l'info
+	 * @return : String reprÃ©sentant la valeur de l'info
 	 * @throws java.lang.Exception
 	 */
 
@@ -88,7 +88,7 @@ public class Configuration {
 		String tmp = config.getProperty(key);
 
 		if (tmp == null) {
-			// On leve une exeption s'il n'est pas non plus dans une traduction "sûr"
+			// On leve une exeption s'il n'est pas non plus dans une traduction "sÃ»r"
 			if (fichier.startsWith("lang_")) {
 				String altFile;
 				if (!Main.JWS) {
@@ -102,7 +102,7 @@ public class Configuration {
 			}
 
 			if (tmp == null)
-				throw new Exception("La valeur correspondant à '" + key
+				throw new Exception("La valeur correspondant Ã  '" + key
 						+ "' n'existe pas dans le fichier '" + fichier + "'");
 		}
 
@@ -117,7 +117,7 @@ public class Configuration {
 
 		if (!Main.JWS) {
 			fos = new FileOutputStream(leFichier);
-			config.store(fos, "Dernière mise a jour :");
+			config.store(fos, "DerniÃ¨re mise a jour :");
 			fos.close();
 		}
 
@@ -157,14 +157,14 @@ public class Configuration {
 
 		String tmp = config.getProperty(key);
 
-		// C'est important de mettre à null, le garbage collector
+		// C'est important de mettre Ã  null, le garbage collector
 		// passe plus vite !
 		leFichier = null;
 		fis = null;
 		config = null;
 
 		if (tmp == null) {
-			// On leve une exeption s'il n'est pas non plus dans une traduction "sûr"
+			// On leve une exeption s'il n'est pas non plus dans une traduction "sÃ»r"
 			if (fichier.startsWith("lang_")) {
 				String altFile;
 				if (!Main.JWS) {
@@ -178,7 +178,7 @@ public class Configuration {
 			}
 
 			if (tmp == null)
-				throw new Exception("La valeur correspondant à '" + key
+				throw new Exception("La valeur correspondant Ã  '" + key
 						+ "' n'existe pas dans le fichier '" + fichier + "'");
 		}
 
@@ -189,8 +189,8 @@ public class Configuration {
 	/**
 	 * Methode : setConfig
 	 * 
-	 * Description : La méthode setConfig va mettre à jour/ inserer l'information de configuration
-	 * désirée à partir dans un fichier de configuration
+	 * Description : La mÃ©thode setConfig va mettre Ã  jour/ inserer l'information de configuration
+	 * dÃ©sirÃ©e Ã  partir dans un fichier de configuration
 	 * 
 	 * date : 8/05/2004
 	 * 
@@ -200,8 +200,8 @@ public class Configuration {
 	 * @throws java.lang.Exception
 	 */
 	public static void setConfig(String fichier, String key, String valeur) throws Exception {
-		// La petite feinte : Il faur recharger entièrement le fichier
-		// et le réecrire.
+		// La petite feinte : Il faur recharger entiÃ¨rement le fichier
+		// et le rÃ©ecrire.
 
 		InputStream fis;
 		FileOutputStream fos;
@@ -229,10 +229,10 @@ public class Configuration {
 
 		if (!Main.JWS) {
 			fos = new FileOutputStream(leFichier);
-			config.store(fos, "Dernière mise a jour :");
+			config.store(fos, "DerniÃ¨re mise a jour :");
 			fos.close();
 		}
-		// C'est important de mettre à null, le garbage collector
+		// C'est important de mettre Ã  null, le garbage collector
 		// passe plus vite !
 
 		leFichier = null;
@@ -267,7 +267,7 @@ public class Configuration {
 
 		if (!Main.JWS) {
 			fos = new FileOutputStream(leFichier);
-			config.store(fos, "Dernière mise a jour :");
+			config.store(fos, "DerniÃ¨re mise a jour :");
 			fos.close();
 		}
 
@@ -287,7 +287,7 @@ public class Configuration {
 
 		if (!Main.JWS) {
 			fos = new FileOutputStream(leFichier);
-			config.store(fos, "Dernière mise a jour :");
+			config.store(fos, "DerniÃ¨re mise a jour :");
 			fos.close();
 		}
 

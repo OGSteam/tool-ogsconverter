@@ -27,7 +27,7 @@ import ogsconverter.widgets.JLimiterTextField;
 
 /**
  * 
- * @author MOREAU Benoît
+ * @author MOREAU BenoÃ®t
  */
 public class BBCodeAdder extends JScrollPane implements ActionListener {
 

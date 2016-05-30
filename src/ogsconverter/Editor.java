@@ -25,7 +25,7 @@ import javax.swing.text.StyledDocument;
 
 /**
  *
- * @author MOREAU Benoît
+ * @author MOREAU BenoÃ®t
  */
 public class Editor extends JTextPane {
 
