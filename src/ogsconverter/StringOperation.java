@@ -4,113 +4,113 @@ import java.util.Vector;
 
 public class StringOperation {
 
-	/** Index du 1er caractere accentuÈ * */
+	/** Index du 1er caractere accentu√© * */
 	private static final int MIN = 192;
-	/** Index du dernier caractere accentuÈ * */
+	/** Index du dernier caractere accentu√© * */
 	private static final int MAX = 255;
 	/** Vecteur de correspondance entre accent / sans accent * */
 	private static final Vector map = initMap();
 
 	/**
-	 * Initialisation du tableau de correspondance entre les caractÈres
-	 * accentuÈs et leur homologues non accentuÈs
+	 * Initialisation du tableau de correspondance entre les caract√©res
+	 * accentu√©s et leur homologues non accentu√©s
 	 */
 	private static Vector initMap() {
 		Vector Result = new Vector();
 		String car = null;
 
 		car = new String("A");
-		Result.add(car); /* '\u00C0' ¿ alt-0192 */
-		Result.add(car); /* '\u00C1' ¡ alt-0193 */
-		Result.add(car); /* '\u00C2' ¬ alt-0194 */
-		Result.add(car); /* '\u00C3' √ alt-0195 */
-		Result.add(car); /* '\u00C4' ƒ alt-0196 */
-		Result.add(car); /* '\u00C5' ≈ alt-0197 */
+		Result.add(car); /* '\u00C0' √Ä alt-0192 */
+		Result.add(car); /* '\u00C1' √Å alt-0193 */
+		Result.add(car); /* '\u00C2' √Ç alt-0194 */
+		Result.add(car); /* '\u00C3' √É alt-0195 */
+		Result.add(car); /* '\u00C4' √Ñ alt-0196 */
+		Result.add(car); /* '\u00C5' √Ö alt-0197 */
 		car = new String("AE");
-		Result.add(car); /* '\u00C6' ∆ alt-0198 */
+		Result.add(car); /* '\u00C6' √Ü alt-0198 */
 		car = new String("C");
-		Result.add(car); /* '\u00C7' « alt-0199 */
+		Result.add(car); /* '\u00C7' √á alt-0199 */
 		car = new String("E");
-		Result.add(car); /* '\u00C8' » alt-0200 */
-		Result.add(car); /* '\u00C9' … alt-0201 */
-		Result.add(car); /* '\u00CA'   alt-0202 */
-		Result.add(car); /* '\u00CB' À alt-0203 */
+		Result.add(car); /* '\u00C8' √à alt-0200 */
+		Result.add(car); /* '\u00C9' √â alt-0201 */
+		Result.add(car); /* '\u00CA' √ä alt-0202 */
+		Result.add(car); /* '\u00CB' √ã alt-0203 */
 		car = new String("I");
-		Result.add(car); /* '\u00CC' Ã alt-0204 */
-		Result.add(car); /* '\u00CD' Õ alt-0205 */
-		Result.add(car); /* '\u00CE' Œ alt-0206 */
-		Result.add(car); /* '\u00CF' œ alt-0207 */
+		Result.add(car); /* '\u00CC' √å alt-0204 */
+		Result.add(car); /* '\u00CD' √ç alt-0205 */
+		Result.add(car); /* '\u00CE' √é alt-0206 */
+		Result.add(car); /* '\u00CF' √è alt-0207 */
 		car = new String("D");
-		Result.add(car); /* '\u00D0' – alt-0208 */
+		Result.add(car); /* '\u00D0' √ê alt-0208 */
 		car = new String("N");
-		Result.add(car); /* '\u00D1' — alt-0209 */
+		Result.add(car); /* '\u00D1' √ë alt-0209 */
 		car = new String("O");
-		Result.add(car); /* '\u00D2' “ alt-0210 */
-		Result.add(car); /* '\u00D3' ” alt-0211 */
-		Result.add(car); /* '\u00D4' ‘ alt-0212 */
-		Result.add(car); /* '\u00D5' ’ alt-0213 */
-		Result.add(car); /* '\u00D6' ÷ alt-0214 */
+		Result.add(car); /* '\u00D2' √í alt-0210 */
+		Result.add(car); /* '\u00D3' √ì alt-0211 */
+		Result.add(car); /* '\u00D4' √î alt-0212 */
+		Result.add(car); /* '\u00D5' √ï alt-0213 */
+		Result.add(car); /* '\u00D6' √ñ alt-0214 */
 		car = new String("*");
-		Result.add(car); /* '\u00D7' ◊ alt-0215 */
+		Result.add(car); /* '\u00D7' √ó alt-0215 */
 		car = new String("0");
-		Result.add(car); /* '\u00D8' ÿ alt-0216 */
+		Result.add(car); /* '\u00D8' √ò alt-0216 */
 		car = new String("U");
-		Result.add(car); /* '\u00D9' Ÿ alt-0217 */
-		Result.add(car); /* '\u00DA' ⁄ alt-0218 */
-		Result.add(car); /* '\u00DB' € alt-0219 */
-		Result.add(car); /* '\u00DC' ‹ alt-0220 */
+		Result.add(car); /* '\u00D9' √ô alt-0217 */
+		Result.add(car); /* '\u00DA' √ö alt-0218 */
+		Result.add(car); /* '\u00DB' √õ alt-0219 */
+		Result.add(car); /* '\u00DC' √ú alt-0220 */
 		car = new String("Y");
-		Result.add(car); /* '\u00DD' › alt-0221 */
-		car = new String("ﬁ");
-		Result.add(car); /* '\u00DE' ﬁ alt-0222 */
+		Result.add(car); /* '\u00DD' √ù alt-0221 */
+		car = new String("√û");
+		Result.add(car); /* '\u00DE' √û alt-0222 */
 		car = new String("B");
-		Result.add(car); /* '\u00DF' ﬂ alt-0223 */
+		Result.add(car); /* '\u00DF' √ü alt-0223 */
 		car = new String("a");
-		Result.add(car); /* '\u00E0' ‡ alt-0224 */
-		Result.add(car); /* '\u00E1' · alt-0225 */
-		Result.add(car); /* '\u00E2' ‚ alt-0226 */
-		Result.add(car); /* '\u00E3' „ alt-0227 */
-		Result.add(car); /* '\u00E4' ‰ alt-0228 */
-		Result.add(car); /* '\u00E5' Â alt-0229 */
+		Result.add(car); /* '\u00E0' √† alt-0224 */
+		Result.add(car); /* '\u00E1' √° alt-0225 */
+		Result.add(car); /* '\u00E2' √¢ alt-0226 */
+		Result.add(car); /* '\u00E3' √£ alt-0227 */
+		Result.add(car); /* '\u00E4' √§ alt-0228 */
+		Result.add(car); /* '\u00E5' √• alt-0229 */
 		car = new String("ae");
-		Result.add(car); /* '\u00E6' Ê alt-0230 */
+		Result.add(car); /* '\u00E6' √¶ alt-0230 */
 		car = new String("c");
-		Result.add(car); /* '\u00E7' Á alt-0231 */
+		Result.add(car); /* '\u00E7' √ß alt-0231 */
 		car = new String("e");
-		Result.add(car); /* '\u00E8' Ë alt-0232 */
-		Result.add(car); /* '\u00E9' È alt-0233 */
-		Result.add(car); /* '\u00EA' Í alt-0234 */
-		Result.add(car); /* '\u00EB' Î alt-0235 */
+		Result.add(car); /* '\u00E8' √® alt-0232 */
+		Result.add(car); /* '\u00E9' √© alt-0233 */
+		Result.add(car); /* '\u00EA' √™ alt-0234 */
+		Result.add(car); /* '\u00EB' √´ alt-0235 */
 		car = new String("i");
-		Result.add(car); /* '\u00EC' Ï alt-0236 */
-		Result.add(car); /* '\u00ED' Ì alt-0237 */
-		Result.add(car); /* '\u00EE' Ó alt-0238 */
-		Result.add(car); /* '\u00EF' Ô alt-0239 */
+		Result.add(car); /* '\u00EC' √¨ alt-0236 */
+		Result.add(car); /* '\u00ED' √≠ alt-0237 */
+		Result.add(car); /* '\u00EE' √Æ alt-0238 */
+		Result.add(car); /* '\u00EF' √Ø alt-0239 */
 		car = new String("d");
-		Result.add(car); /* '\u00F0'  alt-0240 */
+		Result.add(car); /* '\u00F0' √∞ alt-0240 */
 		car = new String("n");
-		Result.add(car); /* '\u00F1' Ò alt-0241 */
+		Result.add(car); /* '\u00F1' √± alt-0241 */
 		car = new String("o");
-		Result.add(car); /* '\u00F2' Ú alt-0242 */
-		Result.add(car); /* '\u00F3' Û alt-0243 */
-		Result.add(car); /* '\u00F4' Ù alt-0244 */
-		Result.add(car); /* '\u00F5' ı alt-0245 */
-		Result.add(car); /* '\u00F6' ˆ alt-0246 */
+		Result.add(car); /* '\u00F2' √≤ alt-0242 */
+		Result.add(car); /* '\u00F3' √≥ alt-0243 */
+		Result.add(car); /* '\u00F4' √¥ alt-0244 */
+		Result.add(car); /* '\u00F5' √µ alt-0245 */
+		Result.add(car); /* '\u00F6' √∂ alt-0246 */
 		car = new String("/");
-		Result.add(car); /* '\u00F7' ˜ alt-0247 */
+		Result.add(car); /* '\u00F7' √∑ alt-0247 */
 		car = new String("0");
-		Result.add(car); /* '\u00F8' ¯ alt-0248 */
+		Result.add(car); /* '\u00F8' √∏ alt-0248 */
 		car = new String("u");
-		Result.add(car); /* '\u00F9' ˘ alt-0249 */
-		Result.add(car); /* '\u00FA' ˙ alt-0250 */
-		Result.add(car); /* '\u00FB' ˚ alt-0251 */
-		Result.add(car); /* '\u00FC' ¸ alt-0252 */
+		Result.add(car); /* '\u00F9' √π alt-0249 */
+		Result.add(car); /* '\u00FA' √∫ alt-0250 */
+		Result.add(car); /* '\u00FB' √ª alt-0251 */
+		Result.add(car); /* '\u00FC' √º alt-0252 */
 		car = new String("y");
-		Result.add(car); /* '\u00FD' ˝ alt-0253 */
-		car = new String("˛");
-		Result.add(car); /* '\u00FE' ˛ alt-0254 */
+		Result.add(car); /* '\u00FD' √Ω alt-0253 */
+		car = new String("√æ");
+		Result.add(car); /* '\u00FE' √æ alt-0254 */
 		car = new String("y");
-		Result.add(car); /* '\u00FF' ˇ alt-0255 */
+		Result.add(car); /* '\u00FF' √ø alt-0255 */
 		Result.add(car); /* '\u00FF'   alt-0255 */
 
 		return Result;
@@ -122,7 +122,7 @@ public class StringOperation {
 	 * 
 	 * @param chaine
 	 *            Chaine a convertir sans accent
-	 * @return Chaine dont les accents ont ÈtÈ supprimÈ
+	 * @return Chaine dont les accents ont √©t√© supprim√©
 	 */
 	public static String sansAccent(String chaine) {
 		StringBuffer Result = new StringBuffer(chaine);

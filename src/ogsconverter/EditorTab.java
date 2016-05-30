@@ -57,7 +57,7 @@ import ogsconverter.widgets.ScrollableBar;
 
 /**
  * 
- * @author MOREAU Benoît
+ * @author MOREAU BenoÃ®t
  */
 public class EditorTab extends JPanel implements UndoableEditListener, ActionListener,
 		KeyListener {

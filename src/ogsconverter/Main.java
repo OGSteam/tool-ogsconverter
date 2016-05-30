@@ -56,7 +56,7 @@ import javax.swing.UIManager;
 
 /**
  * 
- * @author MOREAU Benoît
+ * @author MOREAU BenoÃ®t
  */
 public class Main implements OGSConstantes {
 
@@ -192,7 +192,7 @@ public class Main implements OGSConstantes {
 			configL = new Configuration("lang_" + configC.getConfig("active_language")
 					+ ".ini");
 
-			// Vérifie la version pour la compatibilité
+			// VÃ©rifie la version pour la compatibilitÃ©
 			if (args.length > 1 && !args[1].equals("1.1")) {
 				String[] oldArgs = args;
 				int newSize = 2 + ((oldArgs.length > 1 && !oldArgs[1].equals("0")) ? 1 : 0)
@@ -547,7 +547,7 @@ public class Main implements OGSConstantes {
 				k = -7;
 				while ((k = line.indexOf("#fleet_defense_", k + 7)) != -1) {
 					if (infinity++ > 10000) {
-						Print_exception("Infinity loop!\n\nL'erreur peut être dans cette ligne:\n"
+						Print_exception("Infinity loop!\n\nL'erreur peut Ãªtre dans cette ligne:\n"
 								+ line);
 						return exText;
 					}
@@ -906,7 +906,7 @@ public class Main implements OGSConstantes {
 								}
 
 								if (!zero_round && round == 0) {
-									Print_exception("Ce modèle n'accepte pas les RC à 0 round.");
+									Print_exception("Ce modÃ¨le n'accepte pas les RC Ã  0 round.");
 									break;
 								}
 
@@ -1554,8 +1554,8 @@ public class Main implements OGSConstantes {
 					}
 				} catch (Exception ex) {
 					Except exc = new Except(ex);
-					Print_exception("Error around '[repeat attackers]' n°"
-							+ (repeat_att_index + 1) + " for attacker n°" + (att_index + 1)
+					Print_exception("Error around '[repeat attackers]' nÂ°"
+							+ (repeat_att_index + 1) + " for attacker nÂ°" + (att_index + 1)
 							+ "\n\n" + exc.ExceptoString());
 					ex.printStackTrace();
 				}
@@ -1712,8 +1712,8 @@ public class Main implements OGSConstantes {
 					}
 				} catch (Exception ex) {
 					Except exc = new Except(ex);
-					Print_exception("Error around '[repeat defenders]' n°"
-							+ (repeat_def_index + 1) + " for attacker n°" + (def_index + 1)
+					Print_exception("Error around '[repeat defenders]' nÂ°"
+							+ (repeat_def_index + 1) + " for attacker nÂ°" + (def_index + 1)
 							+ "\n\n" + exc.ExceptoString());
 					ex.printStackTrace();
 				}
@@ -1853,7 +1853,7 @@ public class Main implements OGSConstantes {
 
 					line = tmp[0];
 
-					/* Rapport de recyclage personnalisé */
+					/* Rapport de recyclage personnalisÃ© */
 					for (i = 0; i < harvestInfo.size(); i++) {
 						repl = tmp[1];
 						if (i == harvestInfo.size() - 1 && harvestInfo.size() - 1 != 0) {
@@ -2497,7 +2497,7 @@ public class Main implements OGSConstantes {
 					line = line.replaceFirst("\\Q" + repl + "\\E", tmp[j]);
 				}
 
-				// création des cellules du tableau après les boucles et
+				// crÃ©ation des cellules du tableau aprÃ¨s les boucles et
 				// les variables mais avant les balises:
 				infinity = 0;
 				while ((i = line.indexOf("[cell ")) != -1) {
@@ -3086,7 +3086,7 @@ public class Main implements OGSConstantes {
 									start = 0;
 									continue;
 								} else if (k == (fleet.length + def.length)) {
-									Print_exception("Ship or défense not recognized: \""
+									Print_exception("Ship or dÃ©fense not recognized: \""
 											+ tmp[j] + "\"");
 									repl = tmp[j];
 								}
@@ -3142,7 +3142,7 @@ public class Main implements OGSConstantes {
 								start = 0;
 								continue;
 							} else if (k == (fleet.length + def.length)) {
-								Print_exception("Ship or défense not recognized: \"" + tmp[j]
+								Print_exception("Ship or dÃ©fense not recognized: \"" + tmp[j]
 										+ "\"");
 								repl = tmp[j];
 							}
@@ -5010,7 +5010,7 @@ public class Main implements OGSConstantes {
 							+ formatnumber((long) mprog) + enter;
 				textchanged += enter + " (" + BBCode.addbcolor(0, "FF0000") + "-"
 						+ BBCode.addbcolor(1, "FF0000") + ") p < avg-5%*(max-min)";
-				textchanged += enter + " (=) p = avg±5%*(max-min)";
+				textchanged += enter + " (=) p = avgÂ±5%*(max-min)";
 				textchanged += enter + " (" + BBCode.addbcolor(0, "00FF00") + "+"
 						+ BBCode.addbcolor(1, "00FF00") + ") p < avg+5%*(max-min)" + enter;
 			}
@@ -5995,10 +5995,10 @@ public class Main implements OGSConstantes {
 			toreturn = build.toString();
 
 		} catch (MalformedURLException e) {
-			Print_exception("Je n'arrive pas à vérifier la version.");
+			Print_exception("Je n'arrive pas Ã  vÃ©rifier la version.");
 			return null;
 		} catch (IOException e) {
-			Print_exception("Je n'arrive pas à vérifier la version.");
+			Print_exception("Je n'arrive pas Ã  vÃ©rifier la version.");
 			return null;
 		}
 		return toreturn;
@@ -6016,7 +6016,7 @@ public class Main implements OGSConstantes {
 			else if (os.indexOf("mac") != -1)
 				r.exec("open " + add);
 			else if (os.indexOf("Linux") != -1)
-				r.exec("konqueror " + add); // disont que c'est le plus répendu
+				r.exec("konqueror " + add); // disont que c'est le plus rÃ©pendu
 			// ^^.
 			else
 				r.exec("start " + add);

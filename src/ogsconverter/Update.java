@@ -166,8 +166,8 @@ public class Update {
 		long time = System.currentTimeMillis(), tpas = 2000, readed = 0;
 		DecimalFormat format = new DecimalFormat("0.000");
 		this.setProgress(0);
-		process("Téléchargement des fichiers...");
-		System.out.println("Début de téléchargement.");
+		process("TÃ©lÃ©chargement des fichiers...");
+		System.out.println("DÃ©but de tÃ©lÃ©chargement.");
 		while (deplacement < FileLenght) {
 			pas = (donnees.length - deplacement < pas) ? (donnees.length - deplacement) : pas;
 			BitRead = entree.read(donnees, deplacement, pas);
@@ -208,7 +208,7 @@ public class Update {
 		this.setProgress(100);
 		this.setSpeedValue("");
 
-		System.out.println("Téléchargement terminé.");
+		System.out.println("TÃ©lÃ©chargement terminÃ©.");
 
 	}
 
@@ -241,7 +241,7 @@ public class Update {
 	private void UnZip(String fichier) {
 		progress = 0;
 		process("Extraction des fichiers...");
-		System.out.println("Début de l'extraction des fichiers.");
+		System.out.println("DÃ©but de l'extraction des fichiers.");
 		try {
 			ZipEntry entry;
 			int BUFFER = 2048;
@@ -312,7 +312,7 @@ public class Update {
 		}
 
 		public void run() {
-			// TODO Raccord de méthode auto-généré
+			// TODO Raccord de mÃ©thode auto-gÃ©nÃ©rÃ©
 			JDialog f = new JDialog(Main.getParentFrame());
 			f.setTitle(titre);
 			JProgressBar b = new JProgressBar();

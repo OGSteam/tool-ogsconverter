@@ -83,8 +83,8 @@ public class Help extends JFrame implements ActionListener {
 							+ ":</h2>"
 							+ "<center><p>OGSConverter est un outil vous permettant de personnaliser offline, sur votre PC"
 							+ " tous vos rapports (espionnage, recyclage, bataille, page membres de l'alliance et votre empire) issus de Ogame. De nombreuses options sont configurables,"
-							+ " et sont enregistrées pour ne pas avoir besoins de les redéfinir à chaque fois et deux configurations prédéfinis sont à votre disposition.</p>"
-							+ "<br><i>OGSConverter is a OGSTeam Software © 2006<br>by ben.12</i></center>"
+							+ " et sont enregistrÃ©es pour ne pas avoir besoins de les redÃ©finir Ã  chaque fois et deux configurations prÃ©dÃ©finis sont Ã  votre disposition.</p>"
+							+ "<br><i>OGSConverter is a OGSTeam Software Â© 2006<br>by ben.12</i></center>"
 							+ "</html>");
 		} catch (Exception e) {
 			ExceptionAlert.createExceptionAlert(e);
@@ -101,11 +101,11 @@ public class Help extends JFrame implements ActionListener {
 						+ " - Rapport de Recyclage.\n - Rapport d'Espionnage.\n - Page membres de l'alliance.\n - Votre empire.\n\n\n"
 						+ "II. Comment faire la conversion:\n\nJe copie le rapport dans l'onglet converter et \n"
 						+ "je vais cliquer sur le bouton \"convertir\"\n\n\n III. Config:\n\n"
-						+ " - Le \"!n\" représente le nombre de rounds de la bataille dans le texte intermédiaire du rapport.\n"
+						+ " - Le \"!n\" reprÃ©sente le nombre de rounds de la bataille dans le texte intermÃ©diaire du rapport.\n"
 						+ " - Vous pouvez choisir les balises BBCodes pour l'adapter aux forums.\n"
 						+ " - Vous pouvez ajouter ou supprimer les balises BBCodes, \"$1\" pour remplace la taille pour size et le code couleur pour la couleur...\n"
-						+ "     ATTENTION avant de supprimer une balise BBCode, vérifiez qu'elle n'est pas utilisé dans un modèle de forum.\n"
-						+ " - La validation des différents textes (name, coord, ...) est automatique.");
+						+ "     ATTENTION avant de supprimer une balise BBCode, vÃ©rifiez qu'elle n'est pas utilisÃ© dans un modÃ¨le de forum.\n"
+						+ " - La validation des diffÃ©rents textes (name, coord, ...) est automatique.");
 		t.setEditable(false);
 		t.setLineWrap(true);
 		t.setWrapStyleWord(true);

@@ -16,7 +16,7 @@ public class SplashWindow extends JWindow {
     private SplashWindow(URL filename, long intMinTime) {
         super();
         
-        //initialise la valeur a laquelle le splash screen doit etre fermé
+        //initialise la valeur a laquelle le splash screen doit etre fermÃ©
         timeEnd = System.currentTimeMillis() + intMinTime;
         
         //ajoute la progress bar

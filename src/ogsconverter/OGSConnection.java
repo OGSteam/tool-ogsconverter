@@ -67,7 +67,7 @@ public abstract class OGSConnection {
 		}
 
 		try {
-			// encodage des paramètres de la requête
+			// encodage des paramÃ¨tres de la requÃªte
 			try {
 				OGSConnection.addData(donnees, "login", login);
 				if (password != null) {
@@ -79,7 +79,7 @@ public abstract class OGSConnection {
 				e.printStackTrace();
 			}
 
-			// Configs générales
+			// Configs gÃ©nÃ©rales
 			for (i = 0; i < keys.length; i++) {
 				try {
 					value = config.getConfig(keys[i]);
@@ -104,10 +104,10 @@ public abstract class OGSConnection {
 				ExceptionAlert.createExceptionAlert(e);
 				e.printStackTrace();
 			}
-			// création de la connection
+			// crÃ©ation de la connection
 			HttpURLConnection conn = OGSConnection.getConnection(jwsURL, donnees);
 
-			// lecture de la réponse
+			// lecture de la rÃ©ponse
 			value = conn.getResponseMessage();
 			if (value.indexOf("OK") >= 0) {
 				reader = new BufferedReader(new InputStreamReader(conn.getInputStream(),
@@ -183,7 +183,7 @@ public abstract class OGSConnection {
 				OGSConnection.addData(donnees, "pass", password);
 			}
 
-			// création de la connection
+			// crÃ©ation de la connection
 			conn = OGSConnection.getConnection(jwsURL, donnees);
 
 		} catch (IOException ioe) {
@@ -196,7 +196,7 @@ public abstract class OGSConnection {
 			return null;
 		}
 
-		// lecture de la réponse
+		// lecture de la rÃ©ponse
 		try {
 			value = conn.getResponseMessage();
 			if (value.indexOf("OK") >= 0) {
@@ -285,7 +285,7 @@ public abstract class OGSConnection {
 				OGSConnection.addData(donnees, "pass", password);
 			}
 
-			// création de la connection
+			// crÃ©ation de la connection
 			conn = OGSConnection.getConnection(jwsURL, donnees);
 
 		} catch (IOException ioe) {
@@ -298,7 +298,7 @@ public abstract class OGSConnection {
 			return null;
 		}
 
-		// lecture de la réponse
+		// lecture de la rÃ©ponse
 		try {
 			value = conn.getResponseMessage();
 			if (value.indexOf("OK") >= 0) {
@@ -377,13 +377,13 @@ public abstract class OGSConnection {
 		HttpURLConnection conn;
 		URL theURL;
 
-		// création de la connection
+		// crÃ©ation de la connection
 		theURL = new URL(url);
 		conn = (HttpURLConnection) theURL.openConnection();
 		conn.setRequestProperty("User-Agent", "OGSConverter Stats");
 		conn.setDoOutput(true);
 
-		// envoi de la requête
+		// envoi de la requÃªte
 		writer = new OutputStreamWriter(conn.getOutputStream());
 		writer.write(datas.toString());
 		writer.flush();
@@ -502,7 +502,7 @@ public abstract class OGSConnection {
 				}
 			}
 
-			// défenses
+			// dÃ©fenses
 			tmpMap = rcDatas.get_defender_defense_start();
 			for (i = 0; i < 8; i++) {
 				l = tmpMap.length;
@@ -531,7 +531,7 @@ public abstract class OGSConnection {
 				}
 			}
 
-			// création de la connection
+			// crÃ©ation de la connection
 			conn = OGSConnection.getConnection(ogsc_stats_url, donnees);
 
 		} catch (IOException ioe) {
@@ -545,7 +545,7 @@ public abstract class OGSConnection {
 			return -1;
 		}
 
-		// lecture de la réponse
+		// lecture de la rÃ©ponse
 		try {
 			value = conn.getResponseMessage();
 			if (value.indexOf("OK") >= 0) {
