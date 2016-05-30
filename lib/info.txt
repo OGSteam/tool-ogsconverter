@@ -1,0 +1,4 @@
+Je met ici que les librairie indispensable.
+
+Dans les sources il y a des appelles à d'autre librairies de skins que je n'ai pas mis ici,
+il faut mettre cette partie la en commentaire, ça ne serait pas raisonnable de tout mettre dans le svn.
