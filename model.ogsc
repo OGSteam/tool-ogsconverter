@@ -1,0 +1,181 @@
+/****************************************
+ * 1er modèle standard de RC par ben.12 * 
+ ****************************************/
+
+[option]
+	charset : Cp1252
+	get : ally def|text(20)||Alliance du defenseur?
+	get : ally att|text(20)||Alliance de l'attaquant?
+[/option]
+
+[center]Les flottes suivantes s'affrontent[b] [date] [/b]:
+
+/*
+ * "repeat attackers" sera répété autant de fois qu'il y a d'attaquants
+ */
+[repeat attackers]
+	[line]
+	/* attaquant avant la bataille */
+	[line]Attaquant[b][color=#attacker] [attacker] [/color=#attacker][/b][if "[ally att]"!=""][ [b][ally att][/b] ] [else][endif]([b][attacker coordinates][/b])
+	[line]Armes: [b][attacker weapons][/b]% Bouclier: [b][attacker shielding][/b]% Coque: [b][attacker armour][/b]%
+	[line][color=#attacker]¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯[/color=#attacker]
+	[line]
+	[attacker fleet start]
+		[color=#CCCCCC_to_#attacker][fleet complete name][/color=#CCCCCC_to_#attacker] [color=#attacker_to_#CCCCCC][fleet nb][/color=#attacker_to_#CCCCCC][line]
+	[/attacker fleet start]
+	[color=#attacker]________________________________________________[/color=#attacker]
+[/repeat attackers]
+
+/* 
+ *  "repeat defenders" sera répété autant de fois qu'il y a de défenseurs
+ */
+[repeat defenders]
+	[line]
+	[line]Défenseur[b][color=#defender] [defender] [/color=#defender][/b][if "[ally def]"!=""][ [b][ally def][/b] ] [else][endif]([b][defender coordinates][/b])
+	[line]Armes: [b][defender weapons][/b]% Bouclier: [b][defender shielding][/b]% Coque: [b][defender armour][/b]%
+
+	[defender not destroyed start]
+		[defender fleet start]
+			[first][line][color=#defender]¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯[/color=#defender][line][color=#CCCCCC_to_#defender][fleet complete name][/color=#CCCCCC_to_#defender] [color=#defender_to_#CCCCCC][fleet nb][/color=#defender_to_#CCCCCC][line][/first]
+			[color=#CCCCCC_to_#defender][fleet complete name][/color=#CCCCCC_to_#defender] [color=#defender_to_#CCCCCC][fleet nb][/color=#defender_to_#CCCCCC][line]
+		[/defender fleet start]
+		[defender defense start]
+			[first][line][color=#defender]¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯[/color=#defender][line][color=#CCCCCC_to_#defender][defense complete name][/color=#CCCCCC_to_#defender] [color=#defender_to_#CCCCCC][defense nb][/color=#defender_to_#CCCCCC][line][/first]
+			[color=#CCCCCC_to_#defender][defense complete name][/color=#CCCCCC_to_#defender] [color=#defender_to_#CCCCCC][defense nb][/color=#defender_to_#CCCCCC][line]
+		[/defender defense start]
+	[/defender not destroyed start]
+	/* si le defenseur détruit en 0 round */
+	[defender destroyed start]
+		[line][color=#defender]¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯[/color=#defender][line][color=#CCCCCC]Détruit[/color=#CCCCCC][line]
+	[/defender destroyed start]
+
+	[color=#defender]________________________________________________[/color=#defender]
+[/repeat defenders]
+
+	/* nombre de tours de la baitaille si le defenseur pas détruit en 0 round */
+	[defender not destroyed start]
+		[line][line][i][after battle][/i]
+	[/defender not destroyed start]
+
+[repeat attackers]
+	[line]
+	/* attaquant après la bataille si le defenseur pas détruit en 0 round */
+	[defender not destroyed start]
+		[line]Attaquant[b][color=#attacker] [attacker] [/color=#attacker][/b]([b][attacker coordinates][/b])
+		[line][color=#attacker]¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯[/color=#attacker]
+		[attacker not destroyed]
+			[line]
+			[attacker fleet end]
+				[color=#CCCCCC_to_#attacker][fleet complete name][/color=#CCCCCC_to_#attacker] [color=#attacker_to_#CCCCCC][fleet nb][/color=#attacker_to_#CCCCCC][line]
+			[/attacker fleet end]
+		[/attacker not destroyed]
+		/* si l'attaquant est détruit et si le defenseur pas détruit en 0 round */
+		[attacker destroyed]
+			[line][color=#CCCCCC]Détruit[/color=#CCCCCC][line]
+		[/attacker destroyed]
+		[color=#attacker]________________________________________________[/color=#attacker]
+	[/defender not destroyed start]
+[/repeat attackers]
+
+/* défenseur après la bataille si pas détruit en 0 round */
+[repeat defenders]
+	[line]
+	[defender not destroyed start]
+		[line]Défenseur[b][color=#defender] [defender] [/color=#defender][/b]([b][defender coordinates][/b])
+		[defender not destroyed]
+			[defender fleet end]
+				[first][line][color=#defender]¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯[/color=#defender][line][color=#CCCCCC_to_#defender][fleet complete name][/color=#CCCCCC_to_#defender] [color=#defender_to_#CCCCCC][fleet nb][/color=#defender_to_#CCCCCC][line][/first]
+				[color=#CCCCCC_to_#defender][fleet complete name][/color=#CCCCCC_to_#defender] [color=#defender_to_#CCCCCC][fleet nb][/color=#defender_to_#CCCCCC][line]
+			[/defender fleet end]
+			[defender defense end]
+				[first][line][color=#defender]¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯[/color=#defender][line][color=#CCCCCC_to_#defender][defense complete name][/color=#CCCCCC_to_#defender] [color=#defender_to_#CCCCCC][defense nb][/color=#defender_to_#CCCCCC][line][/first]
+				[color=#CCCCCC_to_#defender][defense complete name][/color=#CCCCCC_to_#defender] [color=#defender_to_#CCCCCC][defense nb][/color=#defender_to_#CCCCCC][line]
+			[/defender defense end]
+		[/defender not destroyed]
+
+		/* si le defenseur est détruit et si le defenseur pas détruit en 0 round */
+		[defender destroyed]
+			[line][color=#defender]¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯[/color=#defender][line][color=#CCCCCC]Détruit[/color=#CCCCCC][line]
+		[/defender destroyed]
+		[color=#defender]________________________________________________[/color=#defender]
+	[/defender not destroyed start]
+[/repeat defenders]
+
+/* bilan du combat */
+[line][line][b][result][/b]
+[line][attacker] emporte:[line]
+	Métal: [color=#number][captured metal][/color=#number][line]
+	Cristal: [color=#number][captured cristal][/color=#number][line]
+	Deutérium: [color=#number][captured deuterium][/color=#number]
+[line][line]L'attaquant [b][attacker][/b] a perdu [color=#great number][attacker true losed][/color=#great number] unités.
+[line]Le defenseur [b][defender][/b] a perdu [color=#great number][defender true losed][/color=#great number] unités.
+[line]Champ de débris: [color=#great number][harvest metal][/color=#great number] unités de métal et [color=#great number][harvest cristal][/color=#great number] unités de cristal.
+[line]Probabilité de création d'une lune: [color=#number][moon probability][/color=#number].[line]
+
+/* si une lune est créée */
+[moon created][b]Une lune a été créée ![/b][line][/moon created]
+
+_______________________________
+[line]
+
+/* Recyclage */
+[harvest report]
+	[print harvest]
+		[if "[harvest date]"!=""]Le [b][harvest date][/b] mes [else]Mes [endif]
+		[b][color=#number][recycler nb][/color=#number][/b] recycleurs
+		[if "[harvest coordinates]"!=""] sont arrivés en [[b][color=#defender][harvest coordinates][/color=#defender][/b]].[line]Il avaient une [else] avaient une [endif]
+		capacité de [b][recycler capacity][/b].[line]
+		Le champs de ruine contenait [color=#number][metal][/color=#number] unités de métal et [color=#number][crystal][/color=#number] unités de crystal.[line]
+		[color=#great number][b][metal taken][/b][/color=#great number] unités de métal et [color=#great number][b][crystal taken][/b][/color=#great number] unités de crystal ont pu être recyclé.[line]
+		[line]Le taux de recyclage de l'opération est de [color=#number][rate][/color=#number]%[line]
+		_______________________________[line]
+	[/print harvest]
+[/harvest report]
+
+[end conversion]
+	[harvest before]
+		[line]Métal et cristal créés dans le champ de ruine: [b][harvestable][/b].[line]
+		Métal et cristal recyclé: [b][harvested][/b].[line]
+	[/harvest before]
+[/end conversion]
+
+[one CR]
+	[harvest report][line]Métal et cristal recyclé: [b][harvested][/b].[line][/harvest report]
+[/one CR]
+
+/* Rentabilité */
+[line][u][b]Consommation:[/b][/u]
+[line][color=#number][consumption][/color=#number] unités de deutérium
+[line]
+[line][u][b]Rentabilité:[/b][/u]
+[line]Attaquant [color=#great number]avec[/color=#great number][harvest]/[color=#number]sans[/color=#number][/harvest] recyclage: 
+	[color=#great number][rentability attacker with][/color=#great number][harvest]/[color=#number][rentability attacker without][/color=#number][/harvest]
+[line]Défenseur [harvest][color=#number]avec[/color=#number]/[/harvest][color=#great number]sans[/color=#great number] recyclage: 
+	[harvest][color=#number][rentability defender with][/color=#number]/[/harvest][color=#great number][rentability defender without][/color=#great number]
+[line]_______________________________
+[line]
+
+/* Rentabilité si plusieur RC */
+[end conversion]
+	[line][u][b]Consommation Totale:[/b][/u]
+	[line][color=#number][total consumption][/color=#number] unités de deutérium
+	[line]
+	[line][u][b]Rentabilité Totale:[/b][/u][line]
+
+	[more one attacker]
+		Attaquants :[line][attackers][color=#defender][attacker][/color=#defender] [color=#great number]avec[/color=#great number][individual harvest]/[color=#number]sans[/color=#number][/individual harvest] recyclage: [color=#great number][individual rentability with][/color=#great number][individual harvest]/[color=#number][individual rentability without][/color=#number][/individual harvest][line][/attackers]
+	[/more one attacker]
+	[more one defender]
+		Défenseurs :[line][defenders][color=#defender][defender][/color=#defender] [color=#great number]avec[/color=#great number][individual harvest]/[color=#number]sans[/color=#number][/individual harvest] recyclage: [color=#great number][individual rentability with][/color=#great number][individual harvest]/[color=#number][individual rentability without][/color=#number][/individual harvest][line][/defenders]
+	[/more one defender]
+
+	[line]Total [color=#attacker]attaquants[/color=#attacker] [color=#great number]avec[/color=#great number][completely not harvested]/[color=#number]sans[/color=#number][/completely not harvested] recyclage: 
+	[color=#great number][rentability attackers with][/color=#great number][completely not harvested]/[color=#number][rentability attackers without][/color=#number][/completely not harvested]
+	[line]Total [color=#defender]défenseurs[/color=#defender] [completely not harvested][color=#number]avec[/color=#number]/[/completely not harvested][color=#great number]sans[/color=#great number] recyclage: 
+	[completely not harvested][color=#number][rentability defenders with][/color=#number]/[/completely not harvested][color=#great number][rentability defenders without][/color=#great number]
+[/end conversion]
+
+/* signature de l'auteur */
+[end conversion][line][line][size=10][color=#66FFCC]Model by ben.12[/color=#66FFCC][/size=10][line][/end conversion]
+[one CR][line][line][size=10][color=#66FFCC]Model by ben.12[/color=#66FFCC][/size=10][line][/one CR]
+[/center]
