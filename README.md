@@ -2,6 +2,8 @@
 
 OGS Converter est un convertisseur de RC très connu sur OGame
 
+Conçu par Ben12
+
 ### What is this repository for? ###
 
 * Quick summary
