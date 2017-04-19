@@ -7,7 +7,7 @@
  * and open the template in the editor.
  */
 
-package ogsconverter;
+package fr.ogsteam.ogsconverter;
 
 import java.awt.Color;
 import java.awt.Dimension;

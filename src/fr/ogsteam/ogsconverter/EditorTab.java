@@ -7,7 +7,7 @@
  * and open the template in the editor.
  */
 
-package ogsconverter;
+package fr.ogsteam.ogsconverter;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -53,7 +53,7 @@ import javax.swing.text.BadLocationException;
 import javax.swing.text.StyledDocument;
 import javax.swing.undo.UndoManager;
 
-import ogsconverter.widgets.ScrollableBar;
+import fr.ogsteam.ogsconverter.widgets.ScrollableBar;
 
 /**
  * 

@@ -1,4 +1,4 @@
-package ogsconverter;
+package fr.ogsteam.ogsconverter;
 
 import java.awt.BorderLayout;
 import java.awt.event.WindowAdapter;

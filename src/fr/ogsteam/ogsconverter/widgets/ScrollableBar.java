@@ -3,7 +3,7 @@
  * Copyright 2004 by Volker H. Simonis. All rights reserved.
  * ===========================================================================
  */
-package ogsconverter.widgets;
+package fr.ogsteam.ogsconverter.widgets;
 
 import java.awt.Component;
 
@@ -20,7 +20,7 @@ public class ScrollableBar extends JComponent implements SwingConstants {
 // BEGIN putUI
   static {
     UIManager.put("ScrollableBarUI", 
-                  "ogsconverter.widgets.ScrollableBarUI");
+                  "ScrollableBarUI");
   }
   // END putUI
 

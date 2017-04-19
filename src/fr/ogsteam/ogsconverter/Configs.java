@@ -1,4 +1,4 @@
-package ogsconverter;
+package fr.ogsteam.ogsconverter;
 
 import java.awt.BorderLayout;
 import java.awt.Component;
@@ -9,7 +9,6 @@ import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.DecimalFormat;
-import java.text.ParseException;
 
 import javax.swing.ButtonGroup;
 import javax.swing.DefaultListModel;
@@ -30,11 +29,9 @@ import javax.swing.JToggleButton;
 import javax.swing.ListSelectionModel;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
-import javax.swing.text.DefaultFormatterFactory;
-import javax.swing.text.MaskFormatter;
 import javax.swing.text.NumberFormatter;
 
-import ogsconverter.widgets.JLimiterTextField;
+import fr.ogsteam.ogsconverter.widgets.JLimiterTextField;
 
 public class Configs extends JPanel {
 

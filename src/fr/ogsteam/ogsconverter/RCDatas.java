@@ -1,4 +1,4 @@
-package ogsconverter;
+package fr.ogsteam.ogsconverter;
 
 import java.util.ArrayList;
 import java.util.Arrays;

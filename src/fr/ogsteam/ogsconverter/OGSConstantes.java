@@ -1,4 +1,4 @@
-package ogsconverter;
+package fr.ogsteam.ogsconverter;
 
 public interface OGSConstantes {
 

@@ -8,7 +8,7 @@
  * Open. You can then make changes to the template in the Source Editor.
  */
 
-package ogsconverter;
+package fr.ogsteam.ogsconverter;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -78,7 +78,7 @@ import javax.swing.plaf.metal.MetalLookAndFeel;
 
 /**
  * 
- * @author MOREAU Benoît
+ * @author MOREAU Benoï¿½t
  */
 public class Fenetre extends JFrame implements WindowListener, ActionListener, MouseListener,
 		ItemListener, Runnable {
@@ -949,7 +949,7 @@ public class Fenetre extends JFrame implements WindowListener, ActionListener, M
 
 		if (!windowevent.getSource().equals(this))
 			return;
-/*//Controle de Mise à jour désactivé car serveur indisponible
+/*//Controle de Mise ï¿½ jour dï¿½sactivï¿½ car serveur indisponible
 		try {
 			if (Configuration.getConfig("config.ini", "MAJ").equals("1")) {
 				Thread t = new Thread() {

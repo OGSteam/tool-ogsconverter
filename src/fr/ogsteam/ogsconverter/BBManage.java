@@ -8,7 +8,7 @@
  * Open. You can then make changes to the template in the Source Editor.
  */
 
-package ogsconverter;
+package fr.ogsteam.ogsconverter;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -16,7 +16,6 @@ import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.text.ParseException;
 import java.util.prefs.Preferences;
 
 import javax.swing.BorderFactory;
@@ -29,9 +28,8 @@ import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
 import javax.swing.JTextField;
 import javax.swing.border.TitledBorder;
-import javax.swing.text.MaskFormatter;
 
-import ogsconverter.widgets.JLimiterTextField;
+import fr.ogsteam.ogsconverter.widgets.JLimiterTextField;
 
 /**
  * 

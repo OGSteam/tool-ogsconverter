@@ -1,4 +1,4 @@
-package ogsconverter.widgets;
+package fr.ogsteam.ogsconverter.widgets;
 
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;

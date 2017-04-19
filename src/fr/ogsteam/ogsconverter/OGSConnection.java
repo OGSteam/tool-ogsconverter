@@ -1,4 +1,4 @@
-package ogsconverter;
+package fr.ogsteam.ogsconverter;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -369,7 +369,7 @@ public abstract class OGSConnection {
 		int i;
 
 		for (i = 0; i < values.length; i++)
-			OGSConnection.addData(datas, key + i, Main.formatnumber(values[i]));
+			addData(datas, key + i, Main.formatnumber(values[i]));
 	}
 
 	static HttpURLConnection getConnection(String url, StringBuffer datas) throws Exception {
@@ -412,39 +412,39 @@ public abstract class OGSConnection {
 			configC = new Configuration("config.ini");
 
 			OGSConnection.addData(donnees, "action", "rcstats");
-			OGSConnection.addData(donnees, "lang", configC.getConfig("active_language"));
-			OGSConnection.addData(donnees, "attacker", rcDatas.get_attacker());
-			OGSConnection.addData(donnees, "defender", rcDatas.get_defender());
-			OGSConnection.addData(donnees, "captured_metal", rcDatas.get_captured_metal());
-			OGSConnection.addData(donnees, "captured_cristal", rcDatas.get_captured_cristal());
-			OGSConnection.addData(donnees, "captured_deuterium",
+			addData(donnees, "lang", configC.getConfig("active_language"));
+			addData(donnees, "attacker", rcDatas.get_attacker());
+			addData(donnees, "defender", rcDatas.get_defender());
+			addData(donnees, "captured_metal", rcDatas.get_captured_metal());
+			addData(donnees, "captured_cristal", rcDatas.get_captured_cristal());
+			addData(donnees, "captured_deuterium",
 					rcDatas.get_captured_deuterium());
-			OGSConnection.addData(donnees, "date", rcDatas.get_date());
-			OGSConnection.addData(donnees, "attacker_coordinates",
+			addData(donnees, "date", rcDatas.get_date());
+			addData(donnees, "attacker_coordinates",
 					rcDatas.get_attacker_coordinates());
-			OGSConnection.addData(donnees, "defender_coordinates",
+			addData(donnees, "defender_coordinates",
 					rcDatas.get_defender_coordinates());
-			OGSConnection.addData(donnees, "harvest_cristal", rcDatas.get_harvest_cristal());
-			OGSConnection.addData(donnees, "harvest_metal", rcDatas.get_harvest_metal());
-			OGSConnection.addData(donnees, "round", Main.formatnumber(rcDatas.getRound()));
-			OGSConnection.addData(donnees, "att_perte_par_ress",
+			addData(donnees, "harvest_cristal", rcDatas.get_harvest_cristal());
+			addData(donnees, "harvest_metal", rcDatas.get_harvest_metal());
+			addData(donnees, "round", Main.formatnumber(rcDatas.getRound()));
+			addData(donnees, "att_perte_par_ress",
 					rcDatas.getAtt_perte_par_ress());
-			OGSConnection.addData(donnees, "def_def_perte_par_ress",
+			addData(donnees, "def_def_perte_par_ress",
 					rcDatas.getDef_def_perte_par_ress());
-			OGSConnection.addData(donnees, "def_flt_perte_par_ress",
+			addData(donnees, "def_flt_perte_par_ress",
 					rcDatas.getDef_flt_perte_par_ress());
-			OGSConnection.addData(donnees, "iamatt", configC.getConfig("iamatt"));
-			OGSConnection.addData(donnees, "consommation",
+			addData(donnees, "iamatt", configC.getConfig("iamatt"));
+			addData(donnees, "consommation",
 					Main.formatnumber(rcDatas.getConsumption()));
-			OGSConnection.addData(donnees, "att_techno0_", rcDatas.get_attacker_weapons());
-			OGSConnection.addData(donnees, "att_techno1_", rcDatas.get_attacker_shielding());
-			OGSConnection.addData(donnees, "att_techno2_", rcDatas.get_attacker_armour());
-			OGSConnection.addData(donnees, "def_techno0_", rcDatas.get_defender_weapons());
-			OGSConnection.addData(donnees, "def_techno1_", rcDatas.get_defender_shielding());
-			OGSConnection.addData(donnees, "def_techno2_", rcDatas.get_defender_armour());
-			OGSConnection.addData(donnees, "harvested_metal",
+			addData(donnees, "att_techno0_", rcDatas.get_attacker_weapons());
+			addData(donnees, "att_techno1_", rcDatas.get_attacker_shielding());
+			addData(donnees, "att_techno2_", rcDatas.get_attacker_armour());
+			addData(donnees, "def_techno0_", rcDatas.get_defender_weapons());
+			addData(donnees, "def_techno1_", rcDatas.get_defender_shielding());
+			addData(donnees, "def_techno2_", rcDatas.get_defender_armour());
+			addData(donnees, "harvested_metal",
 					Main.formatnumber(rcDatas.getHarvestedMetal()));
-			OGSConnection.addData(donnees, "harvested_cristal",
+			addData(donnees, "harvested_cristal",
 					Main.formatnumber(rcDatas.getHarvestedCrystal()));
 			OGSConnection.addData(donnees, "universe", "1");
 

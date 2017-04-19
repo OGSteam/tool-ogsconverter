@@ -3,7 +3,7 @@
  * Copyright 2004 by Volker H. Simonis. All rights reserved.
  * ===========================================================================
  */
-package ogsconverter.widgets;
+package fr.ogsteam.ogsconverter.widgets;
 
 import java.awt.Color;
 import java.awt.Dimension;
