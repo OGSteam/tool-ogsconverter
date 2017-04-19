@@ -1,12 +1,8 @@
 package fr.ogsteam.ogsconverter;
 
-import java.awt.BorderLayout;
+import javax.swing.*;
+import java.awt.*;
 import java.net.URL;
-
-import javax.swing.ImageIcon;
-import javax.swing.JLabel;
-import javax.swing.JProgressBar;
-import javax.swing.JWindow;
 
 
 public class SplashWindow extends JWindow { 

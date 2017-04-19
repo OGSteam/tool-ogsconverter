@@ -1,5 +1,6 @@
 package fr.ogsteam.ogsconverter;
 
+import javax.swing.*;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -8,9 +9,6 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLEncoder;
 import java.util.Map;
-
-import javax.swing.JFrame;
-import javax.swing.JOptionPane;
 
 public abstract class OGSConnection {
 
@@ -111,7 +109,7 @@ public abstract class OGSConnection {
 			value = conn.getResponseMessage();
 			if (value.indexOf("OK") >= 0) {
 				reader = new BufferedReader(new InputStreamReader(conn.getInputStream(),
-						"ISO-8859-1"));
+						"utf-8"));
 				String ligne;
 				while ((ligne = reader.readLine()) != null) {
 					if (ligne.indexOf("ERREUR") >= 0 || ligne.indexOf("error") >= 0
@@ -201,7 +199,7 @@ public abstract class OGSConnection {
 			value = conn.getResponseMessage();
 			if (value.indexOf("OK") >= 0) {
 				reader = new BufferedReader(new InputStreamReader(conn.getInputStream(),
-						"ISO-8859-1"));
+						"utf-8"));
 				String ligne;
 				while ((ligne = reader.readLine()) != null) {
 					if (ligne.indexOf("ERREUR") >= 0 || ligne.indexOf("error") >= 0
@@ -353,9 +351,9 @@ public abstract class OGSConnection {
 			datas.append("&");
 		}
 
-		datas.append(URLEncoder.encode(key, "ISO-8859-1"));
+		datas.append(URLEncoder.encode(key, "utf-8"));
 		datas.append("=");
-		datas.append(URLEncoder.encode(value, "ISO-8859-1"));
+		datas.append(URLEncoder.encode(value, "utf-8"));
 	}
 
 	static void addData(StringBuffer datas, String key, String[] values) throws Exception {
@@ -550,7 +548,7 @@ public abstract class OGSConnection {
 			value = conn.getResponseMessage();
 			if (value.indexOf("OK") >= 0) {
 				reader = new BufferedReader(new InputStreamReader(conn.getInputStream(),
-						"ISO-8859-1"));
+						"utf-8"));
 				String ligne;
 				while ((ligne = reader.readLine()) != null) {
 					reponse.append(ligne).append('\n');

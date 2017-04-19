@@ -5,13 +5,9 @@
  */
 package fr.ogsteam.ogsconverter.widgets;
 
-import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.Graphics;
-
-import javax.swing.JButton;
-import javax.swing.UIManager;
+import javax.swing.*;
 import javax.swing.plaf.metal.MetalLookAndFeel;
+import java.awt.*;
 
 
 public class ScrollButton extends JButton {

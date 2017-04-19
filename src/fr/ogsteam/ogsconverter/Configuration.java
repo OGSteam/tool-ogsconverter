@@ -15,13 +15,13 @@ package fr.ogsteam.ogsconverter;
  * @author MOREAU Benoît
  */
 // Les import
+
+import javax.swing.*;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.util.Properties;
-
-import javax.swing.JOptionPane;
 
 public class Configuration {
 	/**

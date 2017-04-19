@@ -15,11 +15,8 @@ package fr.ogsteam.ogsconverter;
  * @author MC-20-EG-2003
  */
 
-import java.awt.Dimension;
-import java.awt.Graphics;
-import java.awt.Image;
-
-import javax.swing.JComponent;
+import javax.swing.*;
+import java.awt.*;
 
 public class ImagePanel extends JComponent {
 

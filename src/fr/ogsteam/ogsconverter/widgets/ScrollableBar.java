@@ -5,11 +5,8 @@
  */
 package fr.ogsteam.ogsconverter.widgets;
 
-import java.awt.Component;
-
-import javax.swing.JComponent;
-import javax.swing.SwingConstants;
-import javax.swing.UIManager;
+import javax.swing.*;
+import java.awt.*;
 
 public class ScrollableBar extends JComponent implements SwingConstants {
   

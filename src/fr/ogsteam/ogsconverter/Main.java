@@ -10,49 +10,22 @@
 
 package fr.ogsteam.ogsconverter;
 
-import java.awt.Dimension;
-import java.awt.Toolkit;
+import javax.swing.*;
+import java.awt.*;
 import java.awt.datatransfer.Clipboard;
 import java.awt.datatransfer.DataFlavor;
 import java.awt.datatransfer.StringSelection;
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.StringReader;
+import java.io.*;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
-import java.text.Collator;
-import java.text.DecimalFormat;
-import java.text.DecimalFormatSymbols;
-import java.text.NumberFormat;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.GregorianCalendar;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Hashtable;
-import java.util.Iterator;
+import java.text.*;
+import java.util.*;
 import java.util.List;
-import java.util.Locale;
-import java.util.Map;
-import java.util.Properties;
-import java.util.Set;
-import java.util.TreeMap;
 import java.util.Map.Entry;
 import java.util.prefs.Preferences;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
-import javax.swing.ImageIcon;
-import javax.swing.JDialog;
-import javax.swing.JFrame;
-import javax.swing.JOptionPane;
-import javax.swing.UIManager;
 
 /**
  * 
@@ -103,12 +76,12 @@ public class Main implements OGSConstantes {
 						tmp = args[i].split("_value_");
 						if (tmp.length >= 2) {
 							config.setConfig(htmlspecialchars_decode(new String(
-									tmp[0].getBytes(), "ISO-8859-1")),
+									tmp[0].getBytes(), "UTF-8")),
 									htmlspecialchars_decode(new String(tmp[1].getBytes(),
-											"ISO-8859-1")));
+											"UTF-8")));
 						} else if (tmp.length == 1) {
 							config.setConfig(htmlspecialchars_decode(new String(
-									tmp[0].getBytes(), "ISO-8859-1")), "");
+									tmp[0].getBytes(), "UTF-8")), "");
 						}
 					}
 				}
@@ -6678,7 +6651,7 @@ public class Main implements OGSConstantes {
 			"A0FF99", "FFFF90", "FF99A0", "99FFA0", "00CC00", "99A0FF", "CCFFCC", "999900",
 			"FFCC99", "FFCC99", "FFCC00", "FF0000", "888888" };
 
-	static String ogsc_url = "http://www.ogsteam.fr/forums/forum-17-ogsconverter";
+	static String ogsc_url = "https://www.ogsteam.fr/forums/forum-17-ogsconverter";
 
 	static String osenter;
 

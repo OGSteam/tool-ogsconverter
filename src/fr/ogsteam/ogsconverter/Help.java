@@ -10,18 +10,10 @@
 
 package fr.ogsteam.ogsconverter;
 
-import java.awt.BorderLayout;
-import java.awt.FlowLayout;
+import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.JScrollPane;
-import javax.swing.JTextArea;
 
 /**
  * 
@@ -84,7 +76,7 @@ public class Help extends JFrame implements ActionListener {
 							+ "<center><p>OGSConverter est un outil vous permettant de personnaliser offline, sur votre PC"
 							+ " tous vos rapports (espionnage, recyclage, bataille, page membres de l'alliance et votre empire) issus de Ogame. De nombreuses options sont configurables,"
 							+ " et sont enregistrées pour ne pas avoir besoins de les redéfinir à chaque fois et deux configurations prédéfinis sont à votre disposition.</p>"
-							+ "<br><i>OGSConverter is a OGSTeam Software © 2006<br>by ben.12</i></center>"
+							+ "<br><i>OGSConverter is a OGSTeam Software © 2017<br>by ben.12</i></center>"
 							+ "</html>");
 		} catch (Exception e) {
 			ExceptionAlert.createExceptionAlert(e);
@@ -97,7 +89,7 @@ public class Help extends JFrame implements ActionListener {
 		JScrollPane scrollpane = new JScrollPane();
 		scrollpane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
 		JTextArea t = new JTextArea(
-				"Help!\n\nAide en ligne: http://ogsteam.fr/\n\nI. Rapports compatibles:\n\n - Rapport de Bataille (seul, plusieurs avec ou sans recyclage).\n"
+				"Help!\n\nAide en ligne: https://ogsteam.fr/\n\nI. Rapports compatibles:\n\n - Rapport de Bataille (seul, plusieurs avec ou sans recyclage).\n"
 						+ " - Rapport de Recyclage.\n - Rapport d'Espionnage.\n - Page membres de l'alliance.\n - Votre empire.\n\n\n"
 						+ "II. Comment faire la conversion:\n\nJe copie le rapport dans l'onglet converter et \n"
 						+ "je vais cliquer sur le bouton \"convertir\"\n\n\n III. Config:\n\n"
@@ -115,7 +107,7 @@ public class Help extends JFrame implements ActionListener {
 
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource().equals(help)) {
-			Main.openurl("http://ogsteam.fr/");
+			Main.openurl("https://ogsteam.fr/");
 		}
 	}
 
