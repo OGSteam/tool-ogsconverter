@@ -440,7 +440,7 @@ public class Main implements OGSConstantes {
 		}
 
 		char c;
-		String _date = "xx-xx xx:xx", _attacker[][] = new String[RC_nb][], _attacker_coordinates[], _defender[][] = new String[RC_nb][], _defender_coordinates[];
+		String _date = "xx.xx.xxxx xx:xx:xx", _attacker[][] = new String[RC_nb][], _attacker_coordinates[], _defender[][] = new String[RC_nb][], _defender_coordinates[];
 		String _attacker_weapons[], _defender_weapons[], _attacker_shielding[], _defender_shielding[], _attacker_armour[], _defender_armour[];
 		Map[] _attacker_fleet_start, _defender_fleet_start, _defender_defense_start;
 		Map[] _attacker_fleet_end, _defender_fleet_end, _defender_defense_end;
@@ -711,7 +711,7 @@ public class Main implements OGSConstantes {
 			def_index = 0;
 			_moon_created = false;
 			go_end = false;
-			_date = "xx-xx xx:xx";
+			_date = "xx.xx.xxxx xx:xx:xx";
 			_attacker[RC_index] = new String[att_nb[RC_index]];
 			_defender[RC_index] = new String[def_nb[RC_index]];
 			_attacker_coordinates = new String[att_nb[RC_index]];
