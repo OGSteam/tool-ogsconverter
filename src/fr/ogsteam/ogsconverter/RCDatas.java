@@ -83,8 +83,8 @@ public class RCDatas implements OGSConstantes {
 		exploded = text.split(String.valueOf((char) 10));
 
 		repl = (text.split(_inter_round))[0];
-		att_nb = (repl.split(_att + msk_name_coord).length) - 1;
-		def_nb = (repl.split(_def + msk_name_coord).length) - 1;
+		att_nb = (repl.split(_att + MSK_NAME_COORD).length) - 1;
+		def_nb = (repl.split(_def + MSK_NAME_COORD).length) - 1;
 
 		if (att_nb <= 0)
 			att_nb = 1;
@@ -149,7 +149,7 @@ public class RCDatas implements OGSConstantes {
 								.find() || Pattern.compile(_top2, Pattern.CASE_INSENSITIVE)
 								.matcher(line)
 								.find())) {
-					line = line.replaceAll(msk_date, "$1");
+					line = line.replaceAll(MSK_DATE, "$1");
 					_date = line;
 					ok = true;
 					go_end = false;
@@ -188,7 +188,7 @@ public class RCDatas implements OGSConstantes {
 						continue;
 					}
 
-					if (Pattern.compile("^" + _att + msk_name_coord1, Pattern.CASE_INSENSITIVE)
+					if (Pattern.compile("^" + _att + MSK_NAME_COORD_1, Pattern.CASE_INSENSITIVE)
 							.matcher(line)
 							.find()) {
 						if (part.equals("def") && !go_end) {
@@ -229,14 +229,14 @@ public class RCDatas implements OGSConstantes {
 								}
 
 								if (part.equals("def")
-										&& Pattern.compile("^" + _att + msk_name_coord1,
+										&& Pattern.compile("^" + _att + MSK_NAME_COORD_1,
 												Pattern.CASE_INSENSITIVE)
 												.matcher(exploded[j])
 												.find()) {
 									il = j - 1;
 									round++;
 									part = "attack";
-								} else if (Pattern.compile("^" + _def + msk_name_coord1,
+								} else if (Pattern.compile("^" + _def + MSK_NAME_COORD_1,
 										Pattern.CASE_INSENSITIVE).matcher(exploded[j]).find())
 									part = "def";
 							}
@@ -250,12 +250,12 @@ public class RCDatas implements OGSConstantes {
 						tmp = line.split(_type);
 						if (tmp.length > 1)
 							line = _type + tmp[1];
-						_attacker[att_index] = tmp[0].replaceAll(_att + msk_name_coord2, "$1")
+						_attacker[att_index] = tmp[0].replaceAll(_att + MSK_NAME_COORD_2, "$1")
 								.trim();
 						_attacker_coordinates[att_index] = tmp[0].replaceAll(
-								_att + msk_name_coord2, "$2").trim();
+								_att + MSK_NAME_COORD_2, "$2").trim();
 						if (att_coord == null) {
-							tmp = tmp[0].replaceAll(_att + msk_name_coord2, "$2").split(":");
+							tmp = tmp[0].replaceAll(_att + MSK_NAME_COORD_2, "$2").split(":");
 							if (tmp.length >= 3) {
 								att_coord = new int[] { (int) Main.exptoint(tmp[0]),
 										(int) Main.exptoint(tmp[1]),
@@ -264,18 +264,18 @@ public class RCDatas implements OGSConstantes {
 						}
 						tmp = null;
 						att_index++;
-					} else if (Pattern.compile("^" + _def + msk_name_coord1,
+					} else if (Pattern.compile("^" + _def + MSK_NAME_COORD_1,
 							Pattern.CASE_INSENSITIVE).matcher(line).find()) {
 						part = "def";
 						tmp = line.split(_type);
 						if (tmp.length > 1)
 							line = _type + tmp[1];
-						_defender[def_index] = tmp[0].replaceAll(_def + msk_name_coord2, "$1")
+						_defender[def_index] = tmp[0].replaceAll(_def + MSK_NAME_COORD_2, "$1")
 								.trim();
 						_defender_coordinates[def_index] = tmp[0].replaceAll(
-								_def + msk_name_coord2, "$2").trim();
+								_def + MSK_NAME_COORD_2, "$2").trim();
 						if (def_coord == null) {
-							tmp = tmp[0].replaceAll(_def + msk_name_coord2, "$2").split(":");
+							tmp = tmp[0].replaceAll(_def + MSK_NAME_COORD_2, "$2").split(":");
 							if (tmp.length >= 3) {
 								def_coord = new int[] { (int) Main.exptoint(tmp[0]),
 										(int) Main.exptoint(tmp[1]),
@@ -284,25 +284,25 @@ public class RCDatas implements OGSConstantes {
 						}
 						tmp = null;
 						def_index++;
-					} else if (Pattern.compile("^" + _techno + "\\s+" + msk_nb_formated + "%",
+					} else if (Pattern.compile("^" + _techno + "\\s+" + MSK_NB_FORMATED + "%",
 							Pattern.CASE_INSENSITIVE).matcher(line).find()) {
 						tmp = line.split(_type);
 						if (tmp.length > 1)
 							line = _type + tmp[1];
 						if (part.equals("attack")) {
 							_attacker_weapons[att_index - 1] = tmp[0].replaceFirst(
-									msk_technology, "$1");
+									MSK_TECHNOLOGY, "$1");
 							_attacker_shielding[att_index - 1] = tmp[0].replaceFirst(
-									msk_technology, "$2");
+									MSK_TECHNOLOGY, "$2");
 							_attacker_armour[att_index - 1] = tmp[0].replaceFirst(
-									msk_technology, "$3");
+									MSK_TECHNOLOGY, "$3");
 						} else if (part.equals("def")) {
 							_defender_weapons[def_index - 1] = tmp[0].replaceFirst(
-									msk_technology, "$1");
+									MSK_TECHNOLOGY, "$1");
 							_defender_shielding[def_index - 1] = tmp[0].replaceFirst(
-									msk_technology, "$2");
+									MSK_TECHNOLOGY, "$2");
 							_defender_armour[def_index - 1] = tmp[0].replaceFirst(
-									msk_technology, "$3");
+									MSK_TECHNOLOGY, "$3");
 						}
 						tmp = null;
 					}
@@ -325,7 +325,7 @@ public class RCDatas implements OGSConstantes {
 					} else if (Pattern.compile("^" + _nb, Pattern.CASE_INSENSITIVE).matcher(
 							line).find()) {
 						line = line.replaceAll("[\\.,']", "");
-						tmp2 = line.replaceFirst(msk_nb_line, "$1").split("\\s+");
+						tmp2 = line.replaceFirst(MSK_NB_LINE, "$1").split("\\s+");
 						for (j = 0; j < tmp2.length; j++) {
 							if (tmp2[j].trim().equals(""))
 								continue;
@@ -425,16 +425,16 @@ public class RCDatas implements OGSConstantes {
 					} else if (go_end
 							&& Pattern.compile("^" + _gain, Pattern.CASE_INSENSITIVE).matcher(
 									line).find()) {
-						while (!Pattern.compile(msk_gain, Pattern.CASE_INSENSITIVE).matcher(
+						while (!Pattern.compile(MSK_GAIN, Pattern.CASE_INSENSITIVE).matcher(
 								line).find()) {
 							il++;
 							line = exploded[il];
 						}
-						_captured_metal = Main.formatnumber(line.replaceFirst(msk_gain, "$1"));
-						_captured_cristal = Main.formatnumber(line.replaceFirst(msk_gain, "$2"));
-						_captured_deuterium = Main.formatnumber(line.replaceFirst(msk_gain,
+						_captured_metal = Main.formatnumber(line.replaceFirst(MSK_GAIN, "$1"));
+						_captured_cristal = Main.formatnumber(line.replaceFirst(MSK_GAIN, "$2"));
+						_captured_deuterium = Main.formatnumber(line.replaceFirst(MSK_GAIN,
 								"$3"));
-						tmp = line.replaceFirst(msk_gain, "$1:$2:$3").split("\\:");
+						tmp = line.replaceFirst(MSK_GAIN, "$1:$2:$3").split("\\:");
 						continue;
 					} else if (go_end
 							&& Pattern.compile("^" + _lose, Pattern.CASE_INSENSITIVE).matcher(
@@ -453,7 +453,7 @@ public class RCDatas implements OGSConstantes {
 											.matcher(line)
 											.find()) {
 								break;
-							} else if (Pattern.compile(msk_user_msg, Pattern.CASE_INSENSITIVE)
+							} else if (Pattern.compile(MSK_USER_MSG, Pattern.CASE_INSENSITIVE)
 									.matcher(line)
 									.find()) {
 								k = il++;
@@ -484,7 +484,7 @@ public class RCDatas implements OGSConstantes {
 
 						_harvest_metal = Main.formatnumber(tmp[2]);
 						_harvest_cristal = Main.formatnumber(tmp[3]);
-						if ((_moon_probability = repl.replaceFirst(msk_moon_prob, "$1%")).equals(repl))
+						if ((_moon_probability = repl.replaceFirst(MSK_MOON_PROB, "$1%")).equals(repl))
 							_moon_probability = "0%";
 						break;
 					}

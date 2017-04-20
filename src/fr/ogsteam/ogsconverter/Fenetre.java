@@ -1017,7 +1017,7 @@ public class Fenetre extends JFrame implements WindowListener, ActionListener, M
 					newtext = BBCode.addquote(0) + Main.converterEMP(textToConv)
 							+ BBCode.addquote(1);
 				} else if (Pattern.compile(
-						Main.msk_flotte_top.replaceFirst("\\[fleet\\]",
+						Main.MSK_FLOTTE_TOP.replaceFirst("\\[fleet\\]",
 								configL.getConfig("ER_FLEET"))).matcher(text.getText()).find()) {
 					newtext = BBCode.addquote(0) + Main.converterFLEET(textToConv)
 							+ BBCode.addquote(1);
@@ -1427,9 +1427,9 @@ public class Fenetre extends JFrame implements WindowListener, ActionListener, M
 			String setting = Configuration.getConfig("config.ini", "color");
 
 			if (setting.equals("01")) {
-				Main.color = Main.darkcolor;
+				Main.color = Main.DARKCOLOR;
 			} else if (setting.equals("02")) {
-				Main.color = Main.lightcolor;
+				Main.color = Main.LIGHTCOLOR;
 			} else {
 				Main.color = Configuration.getConfig("config.ini", "user_color" + setting)
 						.split(",");

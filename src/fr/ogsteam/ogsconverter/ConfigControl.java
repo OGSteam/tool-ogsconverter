@@ -56,8 +56,8 @@ public class ConfigControl implements ActionListener, ItemListener, MouseListene
 					config.setConfig("user_color_name", names);
 					int l = names.split("\\|").length;
 					name = "";
-					for (int i = 0; i < Main.darkcolor.length; i++)
-						name += "," + Main.darkcolor[i];
+					for (int i = 0; i < Main.DARKCOLOR.length; i++)
+						name += "," + Main.DARKCOLOR[i];
 					config.setConfig("user_color" + l, name.substring(1));
 					config.setConfig("ER_FLEET" + l,
 							"200|200|1000|1000|500|500|500|500|500|500|1000|500|30|500");
