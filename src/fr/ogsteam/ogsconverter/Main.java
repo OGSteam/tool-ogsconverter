@@ -3702,10 +3702,15 @@ public class Main implements OGSConstantes {
 		return tmp;
 	}
 
+	/**
+	 * Function used to parse RE Report
+	 * @param text
+	 * @return
+	 */
 	public static String converterER(String text) {
 		String line = "", exploded[], tmp[], fichier, repl, activity = null;
 		String sl_rss[], sl_flt[], sl_def[], sl_bld[], sl_techno[], name = "";
-		boolean ok = false;
+		boolean report_ok = false;
 		int i, j, k = 0, l, clrindex, id;
 		StringBuffer textchanged = new StringBuffer();
 
@@ -3790,20 +3795,22 @@ public class Main implements OGSConstantes {
 				if (line.equals(""))
 					continue;
 
-				if (ok && !Pattern.compile(msk_is_value).matcher(line).find()) {
-					if (Pattern.compile("\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2}")
+				if (report_ok && !Pattern.compile(msk_is_value).matcher(line).find()) {
+				    // Pattern pour récupérer l'heure dans les RE
+					if (Pattern.compile("\\d{2}.\\d{2}.\\d{4} \\d{2}:\\d{2}:\\d{2}")
 							.matcher(line)
 							.find()) {
 						activity = line;
+						// A quoi ça sert ?
 					} else if (Pattern.compile("\\s\\d+\\s*[^%]").matcher(line).find()) {
 						activity = line;
 					}
 				}
 
-				if (ok == false
+				if (report_ok == false
 						&& Pattern.compile("^" + configL.getConfig("ER_TOP"),
 								Pattern.CASE_INSENSITIVE).matcher(line).find()) {
-					ok = true;
+					report_ok = true;
 					if (Pattern.compile(msk_name_coord_date_new, Pattern.CASE_INSENSITIVE)
 							.matcher(line)
 							.find()) {
@@ -3989,7 +3996,7 @@ public class Main implements OGSConstantes {
 						}
 					}
 					continue;
-				} else if (ok == true
+				} else if (report_ok == true
 						&& configC.getConfig("ER_fleet").equals("1")
 						&& Pattern.compile("^" + configL.getConfig("ER_FLT"),
 								Pattern.CASE_INSENSITIVE).matcher(line).find()) {
@@ -4081,7 +4088,7 @@ public class Main implements OGSConstantes {
 							textchanged.append(enter);
 					}
 					continue;
-				} else if (ok == true
+				} else if (report_ok == true
 						&& configC.getConfig("ER_def").equals("1")
 						&& Pattern.compile("^" + configL.getConfig("ER_DEF"),
 								Pattern.CASE_INSENSITIVE).matcher(line).find()) {
@@ -4173,7 +4180,7 @@ public class Main implements OGSConstantes {
 							textchanged.append(enter);
 					}
 					continue;
-				} else if (ok == true
+				} else if (report_ok == true
 						&& configC.getConfig("ER_building").equals("1")
 						&& Pattern.compile("^" + configL.getConfig("ER_BLD"),
 								Pattern.CASE_INSENSITIVE).matcher(line).find()) {
@@ -4271,7 +4278,7 @@ public class Main implements OGSConstantes {
 							textchanged.append(enter);
 					}
 					continue;
-				} else if (ok == true
+				} else if (report_ok == true
 						&& configC.getConfig("ER_techno").equals("1")
 						&& Pattern.compile("^" + configL.getConfig("ER_THN"),
 								Pattern.CASE_INSENSITIVE).matcher(line).find()) {
